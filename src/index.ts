@@ -3,12 +3,12 @@ import {createConnection} from "typeorm";
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import routes from "./routes/index";
-
+import Book from '../src/entity/BookEntity'
 var cors = require('cors')
 
 // import routes from "./routes";
 
-const SERVER_POST = 3100
+const SERVER_POST = 3000
 
 //这个从typeorm来的，这个会解析ormconfig.json的数据项，然后会打开数据库或者链接数据库
 createConnection().then(async connection => {
@@ -19,6 +19,13 @@ createConnection().then(async connection => {
     app.use(bodyParser.json());
     app.use(cors())
     app.use('/',routes)
+
+     const std = new Book(); std.name = "Student1"; 
+     std.color = "red"; 
+     await connection.manager.save(std); console.log("Saved a new book with id: " + std.id); 
+
+
+
     app.listen(SERVER_POST);
 
     console.log(`Express server has started on port ${SERVER_POST}. Open http://localhost:${SERVER_POST}/users to see results`);

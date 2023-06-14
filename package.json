@@ -1,5 +1,5 @@
 {
-   "name": "group4-order-server",
+   "name": "expressmongo",
    "version": "0.0.1",
    "description": "Awesome project developed with TypeORM.",
    "type": "commonjs",
@@ -25,8 +25,8 @@
       "express": "^4.17.2",
       "helmet": "^5.0.2",
       "jsonwebtoken": "^8.5.1",
-      "mysql": "^2.18.1",
-      "redis": "^4.1.0",
+      "mongodb": "^3.7.3",
+      "mongoose": "^7.2.4",
       "reflect-metadata": "^0.1.13",
       "slug": "^5.3.0",
       "typeorm": "0.2.45",

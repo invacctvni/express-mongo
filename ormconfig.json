@@ -1,11 +1,8 @@
 {
-   "type": "mysql",
-   "host": "localhost",
-   "port": 3306,
-   "username": "group4",
-   "password": "group4",
-   "database": "ordersv",
-   "synchronize": false,
+   "type": "mongodb",
+   "url": "mongodb+srv://admin:641125@cluster0.t9hr7.mongodb.net",
+   "database": "bookstore",
+   "synchronize": true,
    "logging": false,
 
    "[__for typeORM seeding": null,
@@ -13,10 +10,8 @@
    "factories": ["src/db/factories/**/*{.ts,.js}"],
    "__for] typeORM seeding":  null,
 
-
-
    "entities": [
-      "src/entity/**/*.ts"
+      "src/entity/*.ts"
    ],
    "migrations": [
       "src/migration/**/*.ts"
